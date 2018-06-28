@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libMzCouponAPI/libMzCouponAPI.iml" filepath="$PROJECT_DIR$/libMzCouponAPI/libMzCouponAPI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/librarymzcoupon.iml" filepath="$PROJECT_DIR$/librarymzcoupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libMzCouponAPI.iml" filepath="$PROJECT_DIR$/libMzCouponAPI.iml" />
     </modules>
   </component>
 </project>
