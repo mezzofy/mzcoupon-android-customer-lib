@@ -133,7 +133,7 @@ List<CustomerCouponmEntity>
 
 # Licenses
 
-All source code is licensed under the [MIT License.](https://raw.githubusercontent.com/mezzofy/mzcoupon-android-customer-lib/master/LICENSE)
+All source code is licensed under the [MIT License.](https://raw.githubusercontent.com/mezzofy/mzcoupon-android-customer-lib/9f6d85cdaa1a03f323a81d6adf45df36cebb4c75/LICENSE)
 
 
 ### End
