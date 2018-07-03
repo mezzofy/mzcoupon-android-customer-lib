@@ -127,10 +127,8 @@ public class MZCampaign {
         String stackqty = jsonstrings.getJSONFromUrl(CommonModule.getUserpath(context) + "api/v1/pos/overcoupon/" + campaignId + "?qty=" + qty);
         OvercouponData Qty = gson.fromJson(stackqty, OvercouponData.class);
 
-        if (Qty != null)
-            return Qty.getCouponcount();
-        else
-            return 1;
+        return Qty.getCouponcount();
+
     }
 
     public CampaignsData getCampaignsTop() {
