@@ -192,9 +192,12 @@ public class MZCustomer {
 
                 resp = gson.fromJson(newResponse.body().string(), CustomerDataModel.class);
             } else {
-                throw new APIServerException("Error in Login","","");
+                ResponseBody responseBody = response.body();
+                String responseBodyString = response.body().string();
+                Response newResponse = response.newBuilder().body(ResponseBody.create(responseBody.contentType(), responseBodyString.getBytes())).build();
+                JsonResponseStatus responsedatastatus = gson.fromJson(newResponse.body().string(), JsonResponseStatus.class);
+                throw new APIServerException(responsedatastatus.getMessage(),responsedatastatus.getCode(),responsedatastatus.getDeveloperMessage());
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
