@@ -11,7 +11,6 @@ public class CustomerDataModel {
     public CustomerData getCustomer() {
         return customer;
     }
-
     public void setCustomer(CustomerData customer) {
         this.customer = customer;
     }
