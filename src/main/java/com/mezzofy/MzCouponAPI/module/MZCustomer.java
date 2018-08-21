@@ -1,9 +1,11 @@
 package com.mezzofy.MzCouponAPI.module;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
+import com.google.gson.GsonBuilder;
 import com.mezzofy.MzCouponAPI.data.CustomerGroupDataModel;
 import com.mezzofy.MzCouponAPI.data.JsonResponseStatus;
 import com.mezzofy.MzCouponAPI.data.CountryListDataModel;
@@ -153,7 +155,11 @@ public class MZCustomer {
 
                 resp = gson.fromJson(newResponse.body().string(), CustomerDataModel.class);
             } else {
-                throw new APIServerException("Error fb Login","","");
+                ResponseBody responseBody = response.body();
+                String responseBodyString = response.body().string();
+                Response newResponse = response.newBuilder().body(ResponseBody.create(responseBody.contentType(), responseBodyString.getBytes())).build();
+                JsonResponseStatus responsedatastatus = gson.fromJson(newResponse.body().string(), JsonResponseStatus.class);
+                throw new APIServerException(responsedatastatus.getMessage(),responsedatastatus.getCode(),responsedatastatus.getDeveloperMessage());
             }
 
         } catch (IOException e) {

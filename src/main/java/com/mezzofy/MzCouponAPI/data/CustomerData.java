@@ -1,9 +1,12 @@
 package com.mezzofy.MzCouponAPI.data;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by aruna on 7/25/17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerData {
     private String customerId;
     private String merchantId;
@@ -28,6 +31,12 @@ public class CustomerData {
     private String updatedBy;
     private String customerUsername;
     private String customerImageUrl;
+    private String countryName;
+    private String dateofbirth;
+    private int couponCount;
+    private String groupName;
+    private String memberId;
+    private String customData;
 
     public String getCustomerId() {
         return customerId;
@@ -59,6 +68,54 @@ public class CustomerData {
 
     public void setCustomerFirstName(String customerFirstName) {
         this.customerFirstName = customerFirstName;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    public int getCouponCount() {
+        return couponCount;
+    }
+
+    public void setCouponCount(int couponCount) {
+        this.couponCount = couponCount;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
+
+    public String getCustomData() {
+        return customData;
+    }
+
+    public void setCustomData(String customData) {
+        this.customData = customData;
     }
 
     public String getCustomerLastName() {
