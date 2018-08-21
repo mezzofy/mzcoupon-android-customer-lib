@@ -6,11 +6,13 @@ package com.mezzofy.MzCouponAPI.data;
  */
 
 public class CustomerDataModel {
+
     private CustomerData customer;
 
     public CustomerData getCustomer() {
         return customer;
     }
+
     public void setCustomer(CustomerData customer) {
         this.customer = customer;
     }

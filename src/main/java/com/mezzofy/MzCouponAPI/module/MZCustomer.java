@@ -170,7 +170,7 @@ public class MZCustomer {
     }
 
 
-    public CustomerDataModel LoginPlatform(CustomerDeviceDataModel userModel)  throws APIServerException {
+    public CustomerDataModel  LoginPlatform(CustomerDeviceDataModel userModel)  throws APIServerException {
 
         CustomerDataModel resp = null;
         try {
@@ -178,7 +178,6 @@ public class MZCustomer {
             URL url = new URL(CommonModule.getUserpath(context) + "api/v1/customers/auth");
 
             OkHttpClient client = new OkHttpClient.Builder().build();
-
             RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), gson.toJson(userModel).toString());
             String credential = Credentials.basic(CommonModule.getKey(context),CommonModule.getSecretkey(context));
 
@@ -195,7 +194,6 @@ public class MZCustomer {
                 String responseBodyString = response.body().string();
 
                 Response newResponse = response.newBuilder().body(ResponseBody.create(responseBody.contentType(), responseBodyString.getBytes())).build();
-
                 resp = gson.fromJson(newResponse.body().string(), CustomerDataModel.class);
             } else {
                 ResponseBody responseBody = response.body();

@@ -6,6 +6,7 @@ package com.mezzofy.MzCouponAPI.data;
  */
 
 public class CustomerDeviceData {
+
     private String custDeviceId;
     private String customerId;
     private String deviceToken;

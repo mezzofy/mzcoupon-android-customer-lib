@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mzcoupon-android-customer-lib.iml" filepath="$PROJECT_DIR$/mzcoupon-android-customer-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libMzCouponAPI.iml" filepath="$PROJECT_DIR$/libMzCouponAPI.iml" />
     </modules>
   </component>
 </project>

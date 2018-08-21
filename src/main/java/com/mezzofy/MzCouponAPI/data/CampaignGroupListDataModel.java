@@ -5,6 +5,7 @@ import java.util.List;
 public class CampaignGroupListDataModel {
 	private List<CampaignGroupDataModel> campaigngroups;
 	private SiteDataModel size;
+
 	public List<CampaignGroupDataModel> getCampaigngroups() {
 		return campaigngroups;
 	}
