@@ -130,6 +130,50 @@ public class MZPayment {
 
 
 
+    public PoData RequestFreeCouponwithChannel(PomData pomData,String Channelcode) throws APIServerException{
+
+        PomData resp=null;
+
+        try {
+
+            URL url = new URL(CommonModule.getUserpath(context) + "api/v1/pos/customerchannelfree/"+Channelcode);
+            OkHttpClient client = new OkHttpClient.Builder().build();
+
+            RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),gson.toJson(pomData).toString());
+            String credential = Credentials.basic(CommonModule.getKey(context),CommonModule.getSecretkey(context));
+            Request request = new Request.Builder()
+                    .url(url)
+                    .header("Authorization", credential)
+                    .post(body)
+                    .build();
+
+            Response response = client.newCall(request).execute();
+
+            if (response.isSuccessful()) {
+                ResponseBody responseBody = response.body();
+                String responseBodyString = response.body().string();
+                Response newResponse = response.newBuilder().body(ResponseBody.create(responseBody.contentType(), responseBodyString.getBytes())).build();
+
+                resp=gson.fromJson(newResponse.body().string(), PomData.class);
+            }
+            else
+            {
+                ResponseBody responseBody = response.body();
+                String responseBodyString = response.body().string();
+                Response newResponse = response.newBuilder().body(ResponseBody.create(responseBody.contentType(), responseBodyString.getBytes())).build();
+                JsonResponseStatus responsedatastatus=gson.fromJson(newResponse.body().string(), JsonResponseStatus.class);
+                throw new APIServerException(responsedatastatus.getMessage(),responsedatastatus.getCode(),responsedatastatus.getDeveloperMessage());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return resp.getPo();
+    }
+
+
+
+
 //    public PaymentDetailDataModel PaymentUpdate(PaymentDetailDataModel paymentDetailmData)throws APIServerException {
 //
 //        PaymentDetailDataModel resp = null;

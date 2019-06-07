@@ -45,10 +45,15 @@ public class MZCampaign {
         jsonstrings=new JSONSTRINGS(context);
     }
 
-    public CampaignsData getCampaigns(int pagesize, double latitude, double longitude) {
+    public CampaignsData getCampaigns(String channelLocationId,int pagesize, double latitude, double longitude) {
 
         Gson gson = new Gson();
-        String campaign = jsonstrings.getJSONFromUrl(CommonModule.getUserpath(context) + "api/v1/campaigns/customercampaigns?status=A&page="+pagesize+"&latitude"+latitude+"&longitude"+longitude);
+//        String campaign = jsonstrings.getJSONFromUrl(CommonModule.getUserpath(context) + "api/v1/campaigns/customercampaigns?status=A&page="+pagesize+"&latitude"+latitude+"&longitude"+longitude);
+
+
+        String campaign = jsonstrings.getJSONFromUrl(CommonModule.getUserpath(context) + "api/v1/channellocations/coupons/"+channelLocationId);
+        Log.d("campaign",CommonModule.getUserpath(context) + "api/v1/channellocations/coupons/"+channelLocationId);
+
         CampaignsData sCampaignss = gson.fromJson(campaign, CampaignsData.class);
 
         return sCampaignss;
@@ -107,6 +112,7 @@ public class MZCampaign {
     }
     public CampaignGroupListDataModel getCampaignGroups() {
         List<CampaignGroupDataModel> campaignGroupModels = null;
+        Size size=null;
 
         Gson gson = new Gson();
         String campaigngroup = jsonstrings.getJSONFromUrl(CommonModule.getUserpath(context) + "api/v1/campaigngroups");
