@@ -1,13 +1,15 @@
-package com.mezzofy.MzCouponAPI.module;
+package mezzofy.com.libmzcoupon.module;
 
 import android.content.Context;
 
+
 import com.google.gson.Gson;
-import com.mezzofy.MzCouponAPI.data.ChannelLocationDataListModel;
-import com.mezzofy.MzCouponAPI.utills.CommonModule;
-import com.mezzofy.MzCouponAPI.utills.JSONSTRINGS;
 
 import org.json.JSONObject;
+
+import mezzofy.com.libmzcoupon.data.ChannelLocationDataListModel;
+import mezzofy.com.libmzcoupon.utills.CommonModule;
+import mezzofy.com.libmzcoupon.utills.JSONSTRINGS;
 
 public class MZChannel {
 

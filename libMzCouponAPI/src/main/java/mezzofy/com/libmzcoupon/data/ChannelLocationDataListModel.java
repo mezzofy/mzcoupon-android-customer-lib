@@ -1,4 +1,4 @@
-package com.mezzofy.MzCouponAPI.data;
+package mezzofy.com.libmzcoupon.data;
 
 import java.util.List;
 

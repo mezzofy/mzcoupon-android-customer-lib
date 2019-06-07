@@ -1,6 +1,7 @@
 package mezzofy.com.libmzcoupon.module;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -17,6 +18,7 @@ import mezzofy.com.libmzcoupon.data.CampaignSearchDataModel;
 import mezzofy.com.libmzcoupon.data.CampaignsData;
 import mezzofy.com.libmzcoupon.data.JsonResponseStatus;
 import mezzofy.com.libmzcoupon.data.OvercouponData;
+import mezzofy.com.libmzcoupon.data.Size;
 import mezzofy.com.libmzcoupon.utills.APIServerException;
 import mezzofy.com.libmzcoupon.utills.CommonModule;
 import mezzofy.com.libmzcoupon.utills.JSONSTRINGS;

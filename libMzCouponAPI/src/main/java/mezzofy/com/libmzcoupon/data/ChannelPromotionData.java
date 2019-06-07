@@ -1,4 +1,4 @@
-package com.mezzofy.MzCouponAPI.data;
+package mezzofy.com.libmzcoupon.data;
 
 public class ChannelPromotionData {
     private String playCampId;

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
         }else
-            Log.d("Campaigns", mzCampaign.getCampaigns(1, 0.0, 0.0).toString());
+            Log.d("Campaigns", mzCampaign.getCampaigns("C1000004", 1, 0.0,0.0).toString());
 
     }
 }
